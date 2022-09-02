@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Form email</title>
+    
+</head>
+<body>
+
+    <h1> Contato </h1>
+
+    <form method="post" action="https://professores.unisanta.br/sobrino/scripts/mostra-v2.php">
+
+        <label for="email"> Email </label>
+        <input type="email" name="email" id="email" size="10" maxlength="25" placeholder="Insira seu email" required><br>
+
+        <label for="telefone"> Telefone </label>
+        <input type="tel" name="telefone" id="telefone" size="12" maxlength="11" placeholder="Insira seu telefone" required><br>
+
+        <p>
+        <label for="relato"> Conte-nos o seu problema </label><br>
+        <textarea name="relato" id="relato" rows="5" cols="40"></textarea><br>
+        </p>
+
+        <p>
+        <label for="escolaridade">Escolaridade</label>
+        <select name="escolaridade" id="escolaridade" required>
+            <option value="">Escolha uma opção</option>
+            <option value="F">Ensino Fundamental</option>
+            <option value="M">Ensino Médio</option>
+            <option value="T">Ensino Técnico</option>
+            <option value="S">Ensino Superior</option>
+        </select>
+        </p>
+        
+        <p></p>
+        
+        <fieldset>
+
+            <legend>Você é aluno(a)?</legend>
+            <input type="radio" name="aluno" id="aluno-s" value="s"> <label for="aluno-s">sim</label>
+            <input type="radio" name="aluno" id="aluno-n" value="n"> <label for="aluno-n">Não</label>
+
+        </fieldset>
+
+        <p></p>
+
+        <fieldset>
+            <legend>Linguagens favoritas</legend>
+            <input type="checkbox" name="ling[]" id="ling-c" value="c"><label for="ling-c">C</label>
+
+            <input type="checkbox" name="ling[]" id="ling-csharp" value="csharp"><label for="ling-csharp">C#</label>
+
+            <input type="checkbox" name="ling[]" id="ling-htmlcss" value="htmlcss"><label for="ling-htmlcss">HTML/CSS</label>
+        </fieldset>
+        
+        <button>Enviar</button>
+    </form>
+    
+</body>
+</html>
