@@ -1,6 +1,12 @@
+:root {
+    --corPrimaria: #333;
+}
+
 body,select {
     font-family: 'Times New Roman', Times, serif;
     font-size: 1rem;
+    color: var(--corPrimaria);
+    padding: 1rem;
 }
 
 label {

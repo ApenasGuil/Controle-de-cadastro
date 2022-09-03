@@ -1,62 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/estilo.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Form email</title>
-    
+    <script src="js/jQuery-Mask-Plugin-master/dist/jquery.mask.js"></script>
+    <script>
+      $(document).ready(function() {
+          $('.date').mask('00/00/0000');
+          $('.selectonfocus').mask("00/00/0000", {
+              selectOnFocus: true
+          });
+      });
+  </script>
 </head>
-<body>
 
-    <h1> Contato </h1>
+<body onload="setMascaras">
 
-    <form method="post" action="https://professores.unisanta.br/sobrino/scripts/mostra-v2.php">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1> Contato </h1>
+        <form>
+          <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="cpf" class="form-label">CPF</label>
+            <input type="number" class="form-control" id="cpf" aria-describedby="cpfHelp">
+          </div>
+          <div class="mb-3">
+            <label for="birth" class="form-label">Data de Nascimento</label>
+            <input class="form-control date" maxlength="10" type="text" id="txtData" name="ntxtData" required>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Telefone</label>
+            <input type="number" class="form-control" id="phone">
+          </div>
+          <div class="mb-3">
+            <label for="relato" class="form-label">Conte-nos o seu problema</label>
+            <textarea class="form-control" name="relato" id="relato" rows="5" cols="40"></textarea>
+          </div>
+          <div class="mb-3">
+            <select class="form-select" aria-label="Default select example">
+              <option value="">Escolha uma opção</option>
+              <option value="F">Ensino Fundamental</option>
+              <option value="M">Ensino Médio</option>
+              <option value="T">Ensino Técnico</option>
+              <option value="S">Ensino Superior</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Você é aluno(a)?</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="aluno" id="sim">
+              <label class="form-check-label" for="sim">Sim</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="aluno" id="nao">
+              <label class="form-check-label" for="nao">Não</label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="">Linguagens favoritas</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="C">
+              <label class="form-check-label" for="C">
+                C
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="C#">
+              <label class="form-check-label" for="C#">
+                C#
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="TML">
+              <label class="form-check-label" for="HTML">
+                HTML/CSS
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-        <label for="email"> Email </label>
-        <input type="email" name="email" id="email" size="10" maxlength="25" placeholder="Insira seu email" required><br>
 
-        <label for="telefone"> Telefone </label>
-        <input type="tel" name="telefone" id="telefone" size="12" maxlength="11" placeholder="Insira seu telefone" required><br>
 
-        <p>
-        <label for="relato"> Conte-nos o seu problema </label><br>
-        <textarea name="relato" id="relato" rows="5" cols="40"></textarea><br>
-        </p>
 
-        <p>
-        <label for="escolaridade">Escolaridade</label>
-        <select name="escolaridade" id="escolaridade" required>
-            <option value="">Escolha uma opção</option>
-            <option value="F">Ensino Fundamental</option>
-            <option value="M">Ensino Médio</option>
-            <option value="T">Ensino Técnico</option>
-            <option value="S">Ensino Superior</option>
-        </select>
-        </p>
-        
-        <p></p>
-        
-        <fieldset>
-
-            <legend>Você é aluno(a)?</legend>
-            <input type="radio" name="aluno" id="aluno-s" value="s"> <label for="aluno-s">sim</label>
-            <input type="radio" name="aluno" id="aluno-n" value="n"> <label for="aluno-n">Não</label>
-
-        </fieldset>
-
-        <p></p>
-
-        <fieldset>
-            <legend>Linguagens favoritas</legend>
-            <input type="checkbox" name="ling[]" id="ling-c" value="c"><label for="ling-c">C</label>
-
-            <input type="checkbox" name="ling[]" id="ling-csharp" value="csharp"><label for="ling-csharp">C#</label>
-
-            <input type="checkbox" name="ling[]" id="ling-htmlcss" value="htmlcss"><label for="ling-htmlcss">HTML/CSS</label>
-        </fieldset>
-        
-        <button>Enviar</button>
-    </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <script src="js/jQuery-Mask-Plugin-master/dist/examples.js"></script>
+    <script src="https://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+    <script type="text/javascript" src="js/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     
 </body>
+
 </html>
