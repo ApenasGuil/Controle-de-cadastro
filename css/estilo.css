@@ -1,5 +1,7 @@
 :root {
     --corPrimaria: #333;
+    --dragonColor: red;
+    --corSombra: yellow;
 }
 
 body,select {
@@ -12,3 +14,19 @@ body,select {
 label {
     font-weight: bold;
 }
+
+.dragon-color {
+    color: var(--dragonColor);
+    font-size: 4rem;
+    text-shadow: 0px 0px 20px var(--corSombra);
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: red;
+    background: pink;
+  }
+  
+  ::selection {
+    color: red;
+    background: pink;
+  }
